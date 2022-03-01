@@ -23,7 +23,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     Button btnLog, btnReg;
     EditText etLogin, etPass;
     SQLiteDatabase database;
-    ContentValues contentValues;
     DBHelper dbHelper;
 
     @Override
@@ -62,6 +61,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             {
                                 Log=true;
                                 Toast.makeText(getApplicationContext(), "Добро пожаловать!", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(this,Game.class);
+                                startActivity(intent);
+                                break;
                             }
                         }
                         while (cursor.moveToFirst());
